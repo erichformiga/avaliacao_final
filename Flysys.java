@@ -41,6 +41,7 @@ public class Flysys extends JFrame {
         menuPrincipal.add(menuCadastro);
         menuPrincipal.add(menuOperacoes);
 
+        //Configuração FormPrincipal
         this.setJMenuBar(menuPrincipal);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Flysys :: Sistema de Gestão de Aeronves");
