@@ -34,7 +34,7 @@ public class Flysys extends JFrame {
         menuCadastro.add(sairMenu);
         // Itens Menu Operações
         menuOperacoes.add(gerarvoosMenu);
-        menuCadastro.addSeparator();
+        menuOperacoes.addSeparator();
         menuOperacoes.add(operacoesMenu);
     
         // Itens Menu Principal
@@ -53,6 +53,6 @@ public class Flysys extends JFrame {
     }
 
     public static void main(String[] args){
-        Flysys janela = new Flysys();
+        Flysys formFlysys = new Flysys();
     }
 }

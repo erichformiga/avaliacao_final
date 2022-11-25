@@ -14,6 +14,6 @@ public class Relatorio extends JFrame {
     }
 
     public static void main(String[] args){
-        Relatorio janela = new Relatorio();
+        Relatorio formRelatorio = new Relatorio();
     }
 }

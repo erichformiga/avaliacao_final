@@ -14,6 +14,6 @@ public class Companhia extends JFrame {
     }
 
     public static void main(String[] args){
-        Companhia janela = new Companhia();
+        Companhia forCompanhia = new Companhia();
     }
 }

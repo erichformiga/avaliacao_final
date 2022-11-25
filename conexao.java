@@ -25,10 +25,10 @@ public class Conexao {
         }
     }
 
-    private static Properties getProps() throws IOException {
+    /*private static Properties getProps() throws IOException {
         Properties props = new Properties();
         String path = "/Erich/Acadêmico/Senac/Aulas/2-Fase/Programação Orientada a Objetos/banco_interface_grafica/conexao.properties";
         props.load(Conexao.class.getResourceAsStream(path));
         return props;
-    }
+    }*/
 }

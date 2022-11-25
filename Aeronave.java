@@ -14,6 +14,6 @@ public class Aeronave extends JFrame {
     }
 
     public static void main(String[] args){
-        Aeronave janela = new Aeronave();
+        Aeronave formAeronave = new Aeronave();
     }
 }

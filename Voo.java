@@ -1,12 +1,12 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class Pistas extends JFrame {
+public class Voo extends JFrame {
 
-    public Pistas() {
+    public Voo() {
         
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setTitle("Flysys :: Cadastro de Pistas");
+        this.setTitle("Flysys :: Gerar Voos");
         this.setSize(500,300);
         this.setLocation(600, 300);
         //this.setBounds(MAXIMIZED_BOTH, ABORT, WIDTH, HEIGHT);
@@ -14,6 +14,6 @@ public class Pistas extends JFrame {
     }
 
     public static void main(String[] args){
-        Pistas formPistas = new Pistas();
+        Voo formVoo = new Voo();
     }
 }
