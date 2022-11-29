@@ -1,27 +1,27 @@
 
 import java.awt.*;
 import javax.swing.*;
-/*teste  novo*/
+
 public class Flysys extends JFrame {
 
+    private JMenuBar menuPrincipal = new JMenuBar();
+
+    // Menu Cadastro
+    private JMenu menuCadastro = new JMenu("Cadastro");
+    
     // Itens SubMenu Cadastro
     private JMenuItem aeronaveMenu = new JMenuItem("Aeronave");
     private JMenuItem companhiaMenu = new JMenuItem("Companhia");
     private JMenuItem hangaresMenu = new JMenuItem("Hangares");
     private JMenuItem pistaMenu = new JMenuItem("Pista");
     private JMenuItem sairMenu = new JMenuItem("Sair...");
-    
-    // Itens SubMenu Operações
-    private JMenuItem gerarvoosMenu = new JMenuItem("Gerar Voos");
-    private JMenuItem operacoesMenu = new JMenuItem("Relatório");
-    
-    // Menu Cadastro
-    private JMenu menuCadastro = new JMenu("Cadastro");
 
     // Menu Operações
     private JMenu menuOperacoes = new JMenu("Operações");
-
-    private JMenuBar menuPrincipal = new JMenuBar();
+ 
+    // Itens SubMenu Operações
+    private JMenuItem gerarvoosMenu = new JMenuItem("Gerar Voos");
+    private JMenuItem operacoesMenu = new JMenuItem("Relatório");  
 
     public Flysys() {
         // Itens Menu Cadastro
@@ -32,6 +32,7 @@ public class Flysys extends JFrame {
         menuCadastro.add(pistaMenu);
         menuCadastro.addSeparator();
         menuCadastro.add(sairMenu);
+        
         // Itens Menu Operações
         menuOperacoes.add(gerarvoosMenu);
         menuOperacoes.addSeparator();
@@ -47,7 +48,9 @@ public class Flysys extends JFrame {
         this.setTitle("Flysys :: Sistema de Gestão de Aeronves");
         //this.setIconImage("c:/erich/aviao_icon.png");
         this.setSize(500,300);
-        this.setLocation(600, 300);
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        //this.setLocation(600, 300);
         //this.setBounds(500, 500, 500, 500);
         this.setVisible(true);
     }
