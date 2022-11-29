@@ -7,8 +7,12 @@ public class Companhia extends JFrame {
 
     public Companhia() {
 
+    /*  ID_COMPANHIA
+	    NOME_COMPANHIA
+        CNPJ
+        DATA */
 
-        JLabel labelId = new JLabel("ID..:", SwingConstants.LEFT);
+        JLabel labelId = new JLabel("ID..:");
         labelId.setFont(fontForm);
         JLabel labelNome = new JLabel("Nome:");
         labelNome.setFont(fontForm);
@@ -44,6 +48,8 @@ public class Companhia extends JFrame {
         this.setTitle("Flysys :: Cadastro de Companhias");
         this.setSize(500,300);
         this.setLocation(600, 300);
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
         //this.setBounds(MAXIMIZED_BOTH, ABORT, WIDTH, HEIGHT);
         this.setVisible(true);    
     }

@@ -20,9 +20,13 @@ public class Conexao {
             //final String password = props.getProperty("banco.senha");
 
             return DriverManager.getConnection(url, user, password);
-        } catch (SQLException | IOException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private static Properties getProps() {
+        return null;
     }
 
 
