@@ -17,6 +17,7 @@ public class Companhia extends JFrame {
         JLabel labelData = new JLabel("Data:");
         labelData.setFont(fontForm);
         
+        //Posicionando os labels na tela
         JPanel formCompahia = new JPanel();
         formCompahia.setLayout(new GridLayout(0, 1, 10, 10));
         formCompahia.add(labelId);
@@ -27,6 +28,14 @@ public class Companhia extends JFrame {
         //Adicionando os botões
         JButton bntNovo = new JButton("Novo");
         bntNovo.setFont(fontForm);
+        
+        JButton bntListar = new JButton("Listar");
+        bntListar.setFont(fontForm);
+        JButton bntCancelar = new JButton("Cancelar");
+        bntCancelar.setFont(fontForm);
+        JButton bntFecha = new JButton("Fechar");
+        bntCancelar.setFont(fontForm);
+        
 
         // Inicializando o Form Compahia
         add(formCompahia, BorderLayout.NORTH);
