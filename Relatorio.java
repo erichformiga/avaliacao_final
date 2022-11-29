@@ -6,7 +6,7 @@ public class Relatorio extends JFrame {
     public Relatorio() {
         
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setTitle("Flysys :: Cadastro de Relatorio");
+        this.setTitle("Flysys :: Relatorio");
         this.setSize(500,300);
         this.setLocation(600, 300);
         //this.setBounds(MAXIMIZED_BOTH, ABORT, WIDTH, HEIGHT);
@@ -14,6 +14,6 @@ public class Relatorio extends JFrame {
     }
 
     public static void main(String[] args){
-        Relatorio janela = new Relatorio();
+        Relatorio formRelatorio = new Relatorio();
     }
 }

@@ -1,25 +1,30 @@
 
 import java.awt.*;
 import javax.swing.*;
-/*teste  novo*/
+
 public class Flysys extends JFrame {
 
+    private JMenuBar menuPrincipal = new JMenuBar();
+
+    // Menu Cadastro
+    private JMenu menuCadastro = new JMenu("Cadastro");
+    
+    // Itens SubMenu Cadastro
     private JMenuItem aeronaveMenu = new JMenuItem("Aeronave");
     private JMenuItem companhiaMenu = new JMenuItem("Companhia");
     private JMenuItem hangaresMenu = new JMenuItem("Hangares");
     private JMenuItem pistaMenu = new JMenuItem("Pista");
     private JMenuItem sairMenu = new JMenuItem("Sair...");
 
-    private JMenuItem operacoesMenu = new JMenuItem("Relatório");
-    
-    private JMenu menuCadastro = new JMenu("Cadastro");
-
-    private JMenu menuRelatorio = new JMenu("Operações");
-
-    private JMenuBar menuBar = new JMenuBar();
+    // Menu Operações
+    private JMenu menuOperacoes = new JMenu("Operações");
+ 
+    // Itens SubMenu Operações
+    private JMenuItem gerarvoosMenu = new JMenuItem("Gerar Voos");
+    private JMenuItem operacoesMenu = new JMenuItem("Relatório");  
 
     public Flysys() {
-
+        // Itens Menu Cadastro
         menuCadastro.add(companhiaMenu);
         menuCadastro.add(aeronaveMenu);
         menuCadastro.addSeparator();
@@ -27,23 +32,30 @@ public class Flysys extends JFrame {
         menuCadastro.add(pistaMenu);
         menuCadastro.addSeparator();
         menuCadastro.add(sairMenu);
-
-        menuRelatorio.add(operacoesMenu);
+        
+        // Itens Menu Operações
+        menuOperacoes.add(gerarvoosMenu);
+        menuOperacoes.addSeparator();
+        menuOperacoes.add(operacoesMenu);
     
+        // Itens Menu Principal
+        menuPrincipal.add(menuCadastro);
+        menuPrincipal.add(menuOperacoes);
 
-        menuBar.add(menuCadastro);
-        menuBar.add(menuRelatorio);
-
-        this.setJMenuBar(menuBar);
+        //Configuração FormPrincipal
+        this.setJMenuBar(menuPrincipal);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Flysys :: Sistema de Gestão de Aeronves");
+        //this.setIconImage("c:/erich/aviao_icon.png");
         this.setSize(500,300);
-        this.setLocation(600, 300);
-        //this.setBounds(MAXIMIZED_BOTH, ABORT, WIDTH, HEIGHT);
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        //this.setLocation(600, 300);
+        //this.setBounds(500, 500, 500, 500);
         this.setVisible(true);
     }
 
     public static void main(String[] args){
-        Flysys janela = new Flysys();
+        Flysys formFlysys = new Flysys();
     }
 }
