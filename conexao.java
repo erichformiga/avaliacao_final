@@ -20,15 +20,14 @@ public class Conexao {
             //final String password = props.getProperty("banco.senha");
 
             return DriverManager.getConnection(url, user, password);
-        } catch (SQLException | IOException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
-    /*private static Properties getProps() throws IOException {
-        Properties props = new Properties();
-        String path = "/Erich/Acadêmico/Senac/Aulas/2-Fase/Programação Orientada a Objetos/banco_interface_grafica/conexao.properties";
-        props.load(Conexao.class.getResourceAsStream(path));
-        return props;
-    }*/
+    private static Properties getProps() {
+        return null;
+    }
+
+
 }
