@@ -1,6 +1,8 @@
 
 import java.awt.*;
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Flysys extends JFrame {
 
@@ -32,6 +34,13 @@ public class Flysys extends JFrame {
         menuCadastro.add(pistaMenu);
         menuCadastro.addSeparator();
         menuCadastro.add(sairMenu);
+
+        // Sair do sistema
+        sairMenu.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
         
         // Itens Menu Operações
         menuOperacoes.add(gerarvoosMenu);
