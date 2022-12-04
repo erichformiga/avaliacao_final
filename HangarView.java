@@ -2,10 +2,10 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 
-public class Hangares extends JFrame {
+public class HangarView extends JFrame {
     private Font fontForm = new FontUIResource("consolas", Font.PLAIN, 12);
 
-    public Hangares() {
+    public HangarView() {
         
     /*  ID_HANGAR
 	    NOME_HANGAR
@@ -50,7 +50,7 @@ public class Hangares extends JFrame {
     }
     
     public static void main(String[] args){
-        Hangares janela = new Hangares();
+        HangarView janela = new HangarView();
     }
 
 }

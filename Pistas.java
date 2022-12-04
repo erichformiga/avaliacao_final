@@ -1,52 +1,80 @@
-import java.awt.*;
-import javax.swing.*;
-import javax.swing.plaf.FontUIResource;
+import java.util.Objects;
 
-public class Pistas extends JFrame {
-    private Font fontForm = new FontUIResource("consolas", Font.PLAIN, 12);
-    
+public class Pistas {
+    private int id;
+    private String nome;
+
+
+
     public Pistas() {
-        
-    /*  ID_PISTA
-	    NUMERO_PISTA */
-
-        JLabel labelId = new JLabel("ID..:");
-        labelId.setFont(fontForm);
-        JLabel labelNome = new JLabel("Nome da Pista:");
-        labelNome.setFont(fontForm);
-        
-
-        //Posicionando os labels na tela
-        JPanel formPista = new JPanel();
-        formPista.setLayout(new GridLayout(0, 1, 10, 10));
-        formPista.add(labelId);
-        formPista.add(labelNome);
-
-
-        //Adicionando os botões
-        JButton bntNovo = new JButton("Novo");
-        bntNovo.setFont(fontForm);
-        
-        JButton bntListar = new JButton("Listar");
-        bntListar.setFont(fontForm);
-        JButton bntCancelar = new JButton("Cancelar");
-        bntCancelar.setFont(fontForm);
-        JButton bntFecha = new JButton("Fechar");
-        bntCancelar.setFont(fontForm);
-        
-
-        // Inicializando o Form Pista
-        add(formPista, BorderLayout.NORTH);
-
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setTitle("Flysys :: Cadastro de Pista");
-        this.setSize(500,200);
-        this.setLocation(600, 300);
-        //this.setBounds(MAXIMIZED_BOTH, ABORT, WIDTH, HEIGHT);
-        this.setVisible(true);     
     }
 
-    public static void main(String[] args){
-        Pistas formPistas = new Pistas();
+    public Pistas(
+        
+        String nome, String cnpj
+        
+    ) {
+        this.nome = nome;
+
+        
+    // Iniciando a integração com o banco de dados 
+
+        this.id = 1;
     }
+
+    public Pistas(
+        
+        int id, String nome, String cnpj
+        
+    ) {
+        this.id = id;
+        this.nome = nome;
+
+    }
+    public int getId() {
+        return this.id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getNome() {
+        return this.nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Pistas id(int id) {
+        setId(id);
+        return this;
+    }
+    public Pistas nome(String nome) {
+        setNome(nome);
+        return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Pistas)) {
+            return false;
+        }
+        Pistas pistas = (Pistas) o;
+        return id == pistas.id && Objects.equals(nome, pistas.nome);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nome);
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " Id ='" + getId() + "'" +
+            ", Nome ='" + getNome() + "'" +
+            "}";
+    }
+
 }

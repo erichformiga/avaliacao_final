@@ -1,37 +1,34 @@
 import java.util.Objects;
 
-public class Companhia {
+public class Hangar {
     private int id;
     private String nome;
-    private String cnpj;
+    private int idaeronave;    
+    private AeronaveView aeronave;
 
 
-    public Companhia() {
+    public Hangar() {
     }
 
-    public Companhia(
+    public Hangar(
         
         String nome, String cnpj
         
     ) {
         this.nome = nome;
-        this.cnpj = cnpj;
-        
+
     // Iniciando a integração com o banco de dados 
 
-        //this.id = 1;
+        this.id = 1;
     }
 
-    public Companhia(
+    public Hangar(
         
-        int id,
-        String nome,
-        String cnpj
+        int id, String nome
         
     ) {
         this.id = id;
         this.nome = nome;
-        this.cnpj = cnpj;
     }
     public int getId() {
         return this.id;
@@ -45,38 +42,30 @@ public class Companhia {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getCnpj() {
-        return this.cnpj;
-    }
-    public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
-    }
-    public Companhia id(int id) {
+
+    public Hangar id(int id) {
         setId(id);
         return this;
     }
-    public Companhia nome(String nome) {
+    public Hangar nome(String nome) {
         setNome(nome);
         return this;
     }
-    public Companhia cnpj(String cnpj) {
-        setCnpj(cnpj);
-        return this;
-    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof Companhia)) {
+        if (!(o instanceof Hangar)) {
             return false;
         }
-        Companhia companhia = (Companhia) o;
-        return id == companhia.id && Objects.equals(nome, companhia.nome) && Objects.equals(cnpj, companhia.cnpj);
+        Hangar hangar = (Hangar) o;
+        return id == hangar.id && Objects.equals(nome, hangar.nome);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nome, cnpj);
+        return Objects.hash(id, nome);
     }
 
     @Override
@@ -84,7 +73,6 @@ public class Companhia {
         return "{" +
             " Id ='" + getId() + "'" +
             ", Nome ='" + getNome() + "'" +
-            ", Cnpj ='" + getCnpj() + "'" +
             "}";
     }
 

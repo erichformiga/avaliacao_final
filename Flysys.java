@@ -1,6 +1,8 @@
 
 import java.awt.*;
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Flysys extends JFrame {
 
@@ -32,6 +34,37 @@ public class Flysys extends JFrame {
         menuCadastro.add(pistaMenu);
         menuCadastro.addSeparator();
         menuCadastro.add(sairMenu);
+
+        // Chama Form Compahia
+        companhiaMenu.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                CompanhiaView formCompahia = new CompanhiaView();
+                formCompahia.setVisible(true);
+            }
+        });
+
+        // Chama Form Aeronave
+        aeronaveMenu.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                AeronaveView formAeronave = new AeronaveView();
+                formAeronave.setVisible(true);
+            }
+        });
+
+        // Chama Form Hangares
+        hangaresMenu.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                HangarView formHangares = new HangarView();
+                        formHangares.setVisible(true);
+            }
+        });
+
+        // Sair do sistema
+        sairMenu.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
         
         // Itens Menu Operações
         menuOperacoes.add(gerarvoosMenu);

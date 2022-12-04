@@ -1,81 +1,210 @@
-import java.awt.*;
-import javax.swing.*;
-import javax.swing.plaf.FontUIResource;
+import java.util.Objects;
 
-public class Aeronave extends JFrame {
-    private Font fontForm = new FontUIResource("consolas", Font.PLAIN, 12);
+public class Aeronave {
+    private int id;
+    private String marca;
+    private String modelo;
+    private String cor;
+    private String tipo;
+    private String prefixo;
+    private String capacidade;
+    private String velocidade;
+    private int idcompahia;    
+    private CompanhiaView compahia;
+    private int idHangar;
+    private HangarView hangar;
 
     public Aeronave() {
-
-    /*  ID_AERONAVE
-	    MARCA
-        MODELO
-	    COR
-	    TIPO
-	    PREFIXO
-        CAPACIDADE
-	    VELOCIDADE
-        ID_COMPANHIA
-	    ID_HANGAR  */
-
-        JLabel labelId = new JLabel("ID..:");
-        labelId.setFont(fontForm);
-        JLabel labelMarca = new JLabel("Marca:");
-        labelMarca.setFont(fontForm);
-        JLabel labelModelo = new JLabel("Modelo:");
-        labelModelo.setFont(fontForm);
-        JLabel labelCor = new JLabel("Cor:");
-        labelCor.setFont(fontForm);
-        JLabel labelTipo = new JLabel("Tipo:");
-        labelTipo.setFont(fontForm);
-        JLabel labelPrefixo = new JLabel("Prefixo:");
-        labelPrefixo.setFont(fontForm);
-        JLabel labelCapacidade = new JLabel("Capacidade:");
-        labelCapacidade.setFont(fontForm);
-        JLabel labelVelocidade = new JLabel("Velocidade:");
-        labelVelocidade.setFont(fontForm);
-        
-        //Posicionando os labels na tela
-        JPanel formAeronave = new JPanel();
-        formAeronave.setLayout(new GridLayout(0, 1, 10, 10));
-        formAeronave.add(labelId);
-        formAeronave.add(labelMarca);
-        formAeronave.add(labelModelo);
-        formAeronave.add(labelCor);
-        formAeronave.add(labelTipo);
-        formAeronave.add(labelPrefixo);
-        formAeronave.add(labelCapacidade);
-        formAeronave.add(labelVelocidade);
-        
-        
-        //Adicionando os botões
-        JButton bntNovo = new JButton("Novo");
-        bntNovo.setFont(fontForm);
-        JButton bntListar = new JButton("Listar");
-        bntListar.setFont(fontForm);
-        JButton bntCancelar = new JButton("Cancelar");
-        bntCancelar.setFont(fontForm);
-        JButton bntFecha = new JButton("Fechar");
-        bntCancelar.setFont(fontForm);
-        
-
-        // Inicializando o Form Aeronave
-        add(formAeronave, BorderLayout.NORTH);
-
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setTitle("Flysys :: Cadastro de Aeronaves");
-        this.setSize(500,400);
-        this.setLocation(600, 300);
-        this.setLocationRelativeTo(null);
-        this.setResizable(false);
-        //this.setBounds(MAXIMIZED_BOTH, ABORT, WIDTH, HEIGHT);
-        this.setVisible(true);    
     }
 
-    //Conexão com o Banco de dados
+    public Aeronave(
+        
+        String marca,
+        String modelo,
+        String cor,
+        String tipo,
+        String prefixo,
+        String capacidade,
+        String velocidade
+        
+        ) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.cor = cor;
+        this.tipo = tipo;
+        this.prefixo = prefixo;
+        this.capacidade = capacidade;
+        this.velocidade = velocidade;
 
+        
+    // Iniciando a integração com o banco de dados 
 
-    public static void main(String[] args){
-        Aeronave forAeronave = new Aeronave();
+        this.id = 1;
     }
+
+    public Aeronave(
+        
+        int id,
+        String marca,
+        String modelo,
+        String cor,
+        String tipo,
+        String prefixo,
+        String capacidade,
+        String velocidade
+        
+        ) {
+        this.id = id;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.cor = cor;
+        this.tipo = tipo;
+        this.prefixo = prefixo;
+        this.capacidade = capacidade;
+        this.velocidade = velocidade;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getMarca() {
+        return this.marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getModelo() {
+        return this.modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public String getCor() {
+        return this.cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public String getTipo() {
+        return this.tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getPrefixo() {
+        return this.prefixo;
+    }
+
+    public void setPrefixo(String prefixo) {
+        this.prefixo = prefixo;
+    }
+
+    public String getCapacidade() {
+        return this.capacidade;
+    }
+
+    public void setCapacidade(String capacidade) {
+        this.capacidade = capacidade;
+    }
+
+    public String getVelocidade() {
+        return this.velocidade;
+    }
+
+    public void setVelocidade(String velocidade) {
+        this.velocidade = velocidade;
+    }
+
+    public Aeronave id(int id) {
+        setId(id);
+        return this;
+    }
+
+    public Aeronave Marca(String marca) {
+        setMarca(marca);
+        return this;
+    }
+
+    public Aeronave Modelo(String modelo) {
+        setModelo(modelo);
+        return this;
+    }
+
+    public Aeronave Cor(String cor) {
+        setCor(cor);
+        return this;
+    }
+
+    public Aeronave Tipo(String tipo) {
+        setTipo(tipo);
+        return this;
+    }
+
+    public Aeronave Prefixo(String prefixo) {
+        setPrefixo(prefixo);
+        return this;
+    }
+
+    public Aeronave Capacidade(String capacidade) {
+        setCapacidade(capacidade);
+        return this;
+    }
+
+    public Aeronave Velocidade(String velocidade) {
+        setVelocidade(velocidade);
+        return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Aeronave)) {
+            return false;
+        }
+        Aeronave aeronave = (Aeronave) o;
+        return id == aeronave.id && Objects.equals(marca, aeronave.marca);
+    }
+    
+    @Override
+    public int hashCode() {
+        return Objects.hash(
+            id,
+            marca,
+            modelo,
+            cor,
+            tipo,
+            prefixo,
+            capacidade,
+            velocidade
+        );
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " Id ='" + getId() + "'" +
+            ", Marca ='" + getMarca() + "'" +
+            ", Modelo = '" + getModelo() + "'" +
+            ", Cor = '" + getModelo() + "'" +
+            ", Tipo = '" + getTipo() + "'" +
+            ", Prefixo = '" + getPrefixo() + "'" +
+            ", Capacidade = '" + getCapacidade() + "'" +
+            ", Velocidade = '" + getVelocidade() + "'" +
+            "}";
+    }
+
 }
