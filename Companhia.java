@@ -9,15 +9,26 @@ public class Companhia {
     public Companhia() {
     }
 
-    public Companhia(String nome, String cnpj) {
+    public Companhia(
+        
+        String nome, String cnpj
+        
+    ) {
         this.nome = nome;
         this.cnpj = cnpj;
-        // INTEGRAR COM O BANCO
+        
+    // Iniciando a integração com o banco de dados 
 
-        this.id = 1;
+    
+    
+        //this.id = 1;
     }
 
-    public Companhia(int id, String nome, String cnpj) {
+    public Companhia(
+        
+        int id, String nome, String cnpj
+        
+    ) {
         this.id = id;
         this.nome = nome;
         this.cnpj = cnpj;
@@ -62,7 +73,7 @@ public class Companhia {
         Companhia companhia = (Companhia) o;
         return id == companhia.id && Objects.equals(nome, companhia.nome) && Objects.equals(cnpj, companhia.cnpj);
     }
-    
+
     @Override
     public int hashCode() {
         return Objects.hash(id, nome, cnpj);
@@ -71,9 +82,9 @@ public class Companhia {
     @Override
     public String toString() {
         return "{" +
-            " id='" + getId() + "'" +
-            ", nome='" + getNome() + "'" +
-            ", cnpj='" + getCnpj() + "'" +
+            " Id ='" + getId() + "'" +
+            ", Nome ='" + getNome() + "'" +
+            ", Cnpj ='" + getCnpj() + "'" +
             "}";
     }
 

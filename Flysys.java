@@ -35,6 +35,30 @@ public class Flysys extends JFrame {
         menuCadastro.addSeparator();
         menuCadastro.add(sairMenu);
 
+        // Chama Form Compahia
+        companhiaMenu.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                CompanhiaView formCompahia = new CompanhiaView();
+                formCompahia.setVisible(true);
+            }
+        });
+
+        // Chama Form Aeronave
+        aeronaveMenu.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                AeronaveView formAeronave = new AeronaveView();
+                formAeronave.setVisible(true);
+            }
+        });
+
+        // Chama Form Hangares
+        hangaresMenu.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                HangaresView formHangares = new HangaresView();
+                        formHangares.setVisible(true);
+            }
+        });
+
         // Sair do sistema
         sairMenu.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

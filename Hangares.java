@@ -1,56 +1,79 @@
-import java.awt.*;
-import javax.swing.*;
-import javax.swing.plaf.FontUIResource;
+import java.util.Objects;
 
-public class Hangares extends JFrame {
-    private Font fontForm = new FontUIResource("consolas", Font.PLAIN, 12);
+public class Hangares {
+    private int id;
+    private String nome;
+    private int idaeronave;    
+    private AeronaveView aeronave;
+
 
     public Hangares() {
-        
-    /*  ID_HANGAR
-	    NOME_HANGAR
-        ID_AERONAVE */
-
-        JLabel labelId = new JLabel("ID..:");
-        labelId.setFont(fontForm);
-        JLabel labelNome = new JLabel("Nome:");
-        labelNome.setFont(fontForm);
-        
-        //Posicionando os labels na tela
-        JPanel formHangares = new JPanel();
-        formHangares.setLayout(new GridLayout(0, 1, 10, 10));
-        formHangares.add(labelId);
-        formHangares.add(labelNome);
-
-
-
-        //Adicionando os botões
-        JButton bntNovo = new JButton("Novo");
-        bntNovo.setFont(fontForm);
-        
-        JButton bntListar = new JButton("Listar");
-        bntListar.setFont(fontForm);
-        JButton bntCancelar = new JButton("Cancelar");
-        bntCancelar.setFont(fontForm);
-        JButton bntFecha = new JButton("Fechar");
-        bntCancelar.setFont(fontForm);
-        
-
-        // Inicializando o Form Hangares
-        add(formHangares, BorderLayout.NORTH);
-
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setTitle("Flysys :: Cadastro de Hangares");
-        this.setSize(500,300);
-        this.setLocation(600, 300);
-        this.setLocationRelativeTo(null);
-        this.setResizable(false);
-        //this.setBounds(MAXIMIZED_BOTH, ABORT, WIDTH, HEIGHT);
-        this.setVisible(true);    
     }
-    
-    public static void main(String[] args){
-        Hangares janela = new Hangares();
+
+    public Hangares(
+        
+        String nome, String cnpj
+        
+    ) {
+        this.nome = nome;
+
+    // Iniciando a integração com o banco de dados 
+
+        this.id = 1;
+    }
+
+    public Hangares(
+        
+        int id, String nome
+        
+    ) {
+        this.id = id;
+        this.nome = nome;
+    }
+    public int getId() {
+        return this.id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getNome() {
+        return this.nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Hangares id(int id) {
+        setId(id);
+        return this;
+    }
+    public Hangares nome(String nome) {
+        setNome(nome);
+        return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Hangares)) {
+            return false;
+        }
+        Hangares hangares = (Hangares) o;
+        return id == hangares.id && Objects.equals(nome, hangares.nome);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nome);
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " Id ='" + getId() + "'" +
+            ", Nome ='" + getNome() + "'" +
+            "}";
     }
 
 }
