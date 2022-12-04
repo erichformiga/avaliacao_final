@@ -11,8 +11,8 @@ public class Aeronave {
     private String velocidade;
     private int idcompahia;    
     private CompanhiaView compahia;
-    private int idHangares;
-    private HangaresView Hangares;
+    private int idHangar;
+    private HangarView hangar;
 
     public Aeronave() {
     }

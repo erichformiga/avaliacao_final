@@ -19,14 +19,14 @@ public class Companhia {
         
     // Iniciando a integração com o banco de dados 
 
-    
-    
         //this.id = 1;
     }
 
     public Companhia(
         
-        int id, String nome, String cnpj
+        int id,
+        String nome,
+        String cnpj
         
     ) {
         this.id = id;

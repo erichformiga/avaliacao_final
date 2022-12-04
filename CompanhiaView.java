@@ -76,30 +76,28 @@ public class CompanhiaView extends JFrame {
         panel3.add(bntGravar);
         panel3.add(bntFechar);
 
-        String[] columnNames = {"Campo",
-                        "Last Name",
-                        "Sport",
-                        "# of Years",
-                        "Vegetarian"};
+        String[] columnNames = {"ID",
+                        "NOME",
+                        "CNPJ"};
 
         Object[][] data = {
-            {"Kathy", "Smith",
-             "Snowboarding", new Integer(5), new Boolean(false)},
-            {"John", "Doe",
-             "Rowing", new Integer(3), new Boolean(true)},
-            {"Sue", "Black",
-             "Knitting", new Integer(2), new Boolean(false)},
-            {"Jane", "White",
-             "Speed reading", new Integer(20), new Boolean(true)},
-            {"Joe", "Brown",
-             "Pool", new Integer(10), new Boolean(false)}
+            {"1", "GOL",
+             "11111111111", new Integer(5), new Boolean(false)},
+            {"2", "AZUL",
+             "22222222222", new Integer(3), new Boolean(true)},
+            {"3", "EMIRATES",
+             "33333333333", new Integer(2), new Boolean(false)},
+            {"4", "LATAM",
+             "44444444444", new Integer(20), new Boolean(true)},
+            {"5", "AIR FRANCE",
+             "55555555555", new Integer(11), new Boolean(false)}
         };
         JTable tableView = new JTable(data, columnNames);
         tableView.setAutoResizeMode( JTable.AUTO_RESIZE_OFF );
         tableView.setPreferredScrollableViewportSize(new Dimension(400,100));
         JScrollPane scrollPane = new JScrollPane(tableView);
         panel2.add(scrollPane);
-
+        //tableView.setVisible(false);
 
 
         // Inicializando o Form Compahia

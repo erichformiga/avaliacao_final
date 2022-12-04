@@ -22,7 +22,7 @@ public class CompanhiaConexao {
         try {
             PreparedStatement conecSql = connection.prepareStatement("INSERT INTO companhia (NOME_COMPANHIA, CNPJ) VALUE (?,?)");
             conecSql.setString(1, "NOME_COMPANHIA");
-            conecSql.setString(1, "CNPJ");
+            conecSql.setString(2, "CNPJ");
             conecSql.execute();
             JOptionPane.showMessageDialog(null, "Companhia Cadastrado com Suscesso");
         } catch (SQLException e) {
@@ -50,18 +50,18 @@ public class CompanhiaConexao {
                 atualizar(companhia);
             }
         }
-
+        // Deletando uma companhia Existente
         public void excluir (Companhia companhia) {
             try {
                 PreparedStatement conecSql = connection.prepareStatement("DELETE FROM companhia WHERE ID_COMPANHIA=?");
-                conecSql.setInt(3, companhia.getId());
+                conecSql.setInt(1, companhia.getId());
                 conecSql.execute();
                 JOptionPane.showMessageDialog(null, "Companhia Removida com Suscesso");
             } catch (SQLException e) {
                     Logger.getLogger(CompanhiaConexao.class.getName());
             }
         }
-
+        // Listando todas as Companhias existentes
         public List<Companhia> getListar() {
             List<Companhia>  companhias = new ArrayList<>();
             try {

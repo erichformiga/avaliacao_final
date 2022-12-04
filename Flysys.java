@@ -54,7 +54,7 @@ public class Flysys extends JFrame {
         // Chama Form Hangares
         hangaresMenu.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                HangaresView formHangares = new HangaresView();
+                HangarView formHangares = new HangarView();
                         formHangares.setVisible(true);
             }
         });

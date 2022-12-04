@@ -1,16 +1,16 @@
 import java.util.Objects;
 
-public class Hangares {
+public class Hangar {
     private int id;
     private String nome;
     private int idaeronave;    
     private AeronaveView aeronave;
 
 
-    public Hangares() {
+    public Hangar() {
     }
 
-    public Hangares(
+    public Hangar(
         
         String nome, String cnpj
         
@@ -22,7 +22,7 @@ public class Hangares {
         this.id = 1;
     }
 
-    public Hangares(
+    public Hangar(
         
         int id, String nome
         
@@ -43,11 +43,11 @@ public class Hangares {
         this.nome = nome;
     }
 
-    public Hangares id(int id) {
+    public Hangar id(int id) {
         setId(id);
         return this;
     }
-    public Hangares nome(String nome) {
+    public Hangar nome(String nome) {
         setNome(nome);
         return this;
     }
@@ -56,11 +56,11 @@ public class Hangares {
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof Hangares)) {
+        if (!(o instanceof Hangar)) {
             return false;
         }
-        Hangares hangares = (Hangares) o;
-        return id == hangares.id && Objects.equals(nome, hangares.nome);
+        Hangar hangar = (Hangar) o;
+        return id == hangar.id && Objects.equals(nome, hangar.nome);
     }
 
     @Override
