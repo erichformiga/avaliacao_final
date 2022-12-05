@@ -14,8 +14,6 @@ public class Aeronave {
     private int idHangar;
     private HangarView hangar;
 
-    public Aeronave() {
-    }
 
     public Aeronave(
         
@@ -166,6 +164,38 @@ public class Aeronave {
     public Aeronave Velocidade(String velocidade) {
         setVelocidade(velocidade);
         return this;
+    }
+
+    public int getIdcompahia() {
+        return idcompahia;
+    }
+
+    public void setIdcompahia(int idcompahia) {
+        this.idcompahia = idcompahia;
+    }
+
+    public CompanhiaView getCompahia() {
+        return compahia;
+    }
+
+    public void setCompahia(CompanhiaView compahia) {
+        this.compahia = compahia;
+    }
+
+    public int getIdHangar() {
+        return idHangar;
+    }
+
+    public void setIdHangar(int idHangar) {
+        this.idHangar = idHangar;
+    }
+
+    public HangarView getHangar() {
+        return hangar;
+    }
+
+    public void setHangar(HangarView hangar) {
+        this.hangar = hangar;
     }
 
     @Override

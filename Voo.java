@@ -1,78 +1,206 @@
-import java.awt.*;
-import javax.swing.*;
-import javax.swing.plaf.FontUIResource;
+import java.util.Objects;
 
-public class Voo extends JFrame {
-    private Font fontForm = new FontUIResource("consolas", Font.PLAIN, 12);
+public class Voo {
+    private int id;
+    private String numero;
+    private String data;
+	private String origem;
+    private String destino;
+    private String piloto;
+    private String copiloto;
+    private String observacao;
+    private int idPista;
+    private PistaView pista;
+    private int idAeronave;
+    private AeronaveView aeronave;
 
     public Voo() {
-        
-    /*  ID_VOO
-	    NUMERO
-        DATA
-	    ORIGEM
-	    DESTINO
-	    PILOTO
-	    COPILOTO
-	    OBSERVACAO
-        ID_PISTA
-	    ID_AERONAVE */
-
-        JLabel labelId = new JLabel("ID..:");
-        labelId.setFont(fontForm);
-        JLabel labelNumero = new JLabel("Número:");
-        labelNumero.setFont(fontForm);
-        JLabel labelData = new JLabel("Data:");
-        labelData.setFont(fontForm);
-        JLabel labelOrigem = new JLabel("Origem:");
-        labelOrigem.setFont(fontForm);
-        JLabel labelDestino = new JLabel("Destino:");
-        labelDestino.setFont(fontForm);
-        JLabel labelPiloto = new JLabel("Piloto:");
-        labelPiloto.setFont(fontForm);
-        JLabel labelCopiloto = new JLabel("Copiloto:");
-        labelCopiloto.setFont(fontForm);
-        JLabel labelObservacao = new JLabel("Observações:");
-        labelObservacao.setFont(fontForm);
-        
-        //Posicionando os labels na tela
-        JPanel formAVoo = new JPanel();
-        formAVoo.setLayout(new GridLayout(0, 1, 10, 10));
-        formAVoo.add(labelId);
-        formAVoo.add(labelNumero);
-        formAVoo.add(labelData);
-        formAVoo.add(labelOrigem);
-        formAVoo.add(labelDestino);
-        formAVoo.add(labelPiloto);
-        formAVoo.add(labelCopiloto);
-        formAVoo.add(labelObservacao);
-        
-        
-        //Adicionando os botões
-        JButton bntNovo = new JButton("Novo");
-        bntNovo.setFont(fontForm);
-        JButton bntListar = new JButton("Listar");
-        bntListar.setFont(fontForm);
-        JButton bntCancelar = new JButton("Cancelar");
-        bntCancelar.setFont(fontForm);
-        JButton bntFecha = new JButton("Fechar");
-        bntCancelar.setFont(fontForm);
-        
-
-        // Inicializando o Form Aeronave
-        add(formAVoo, BorderLayout.NORTH);
-
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setTitle("Flysys :: Cadastro de Voos");
-        this.setSize(500,400);
-        this.setLocation(600, 300);
-        this.setLocationRelativeTo(null);
-        this.setResizable(false);
-        //this.setBounds(MAXIMIZED_BOTH, ABORT, WIDTH, HEIGHT);
-        this.setVisible(true);    
     }
 
-    public static void main(String[] args){
-        Voo formVoo = new Voo();
+    public Voo(
+        
+        String numero,
+        String data,
+        String origem,
+        String destino,
+        String piloto,
+        String copiloto,
+        String observacao
+        
+    ) {
+        this.numero = numero;
+        this.data = data;
+        this.origem = origem;
+        this.destino = destino;
+        this.piloto = piloto;
+        this.copiloto = copiloto;
+        this.observacao = observacao;
+       
+    // Iniciando a integração com o banco de dados 
+
+        this.id = 1;
     }
+
+    public Voo(
+        
+        int id,
+        String numero,
+        String data,
+        String origem,
+        String destino,
+        String piloto,
+        String copiloto,
+        String observacao
+        
+    ) {
+        this.id = id;
+        this.numero = numero;
+        this.data = data;
+        this.origem = origem;
+        this.destino = destino;
+        this.piloto = piloto;
+        this.copiloto = copiloto;
+        this.observacao = observacao;
+
+    }
+    public int getId() {
+        return this.id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getNumero() {
+        return this.numero;
+    }
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+   
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getOrigem() {
+        return origem;
+    }
+
+    public void setOrigem(String origem) {
+        this.origem = origem;
+    }
+
+    public String getDestino() {
+        return destino;
+    }
+
+    public void setDestino(String destino) {
+        this.destino = destino;
+    }
+
+    public String getPiloto() {
+        return piloto;
+    }
+
+    public void setPiloto(String piloto) {
+        this.piloto = piloto;
+    }
+
+    public String getCopiloto() {
+        return copiloto;
+    }
+
+    public void setCopiloto(String copiloto) {
+        this.copiloto = copiloto;
+    }
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
+
+    public int getIdPista() {
+        return idPista;
+    }
+
+    public void setIdPista(int idPista) {
+        this.idPista = idPista;
+    }
+
+    public PistaView getPista() {
+        return pista;
+    }
+
+    public void setPista(PistaView pista) {
+        this.pista = pista;
+    }
+
+    public int getIdAeronave() {
+        return idAeronave;
+    }
+
+    public void setIdAeronave(int idAeronave) {
+        this.idAeronave = idAeronave;
+    }
+
+    public AeronaveView getAeronave() {
+        return aeronave;
+    }
+
+    public void setAeronave(AeronaveView aeronave) {
+        this.aeronave = aeronave;
+    }
+
+    public Voo id(int id) {
+        setId(id);
+        return this;
+    }
+    public Voo numero(String numero) {
+        setNumero(numero);
+        return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Voo)) {
+            return false;
+        }
+        Voo Voos = (Voo) o;
+        return id == Voos.id && Objects.equals(numero, Voos.numero);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id,
+        numero,
+        data,
+        origem,
+        destino,
+        piloto,
+        copiloto,
+        observacao
+        );
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+        " Id ='" + getId() + "'" +
+        ", Numero ='" + getNumero() + "'" +
+        ", Data = '" + getData() + "'" +
+        ", Origem = '" + getOrigem() + "'" +
+        ", Destino = '" + getDestino() + "'" +
+        ", Piloto = '" + getPiloto() + "'" +
+        ", Copiloto = '" + getCopiloto() + "'" +
+        ", Observação = '" + getObservacao() + "'" +
+        "}";
+    }
+
 }
