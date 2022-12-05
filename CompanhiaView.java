@@ -40,7 +40,7 @@ public class CompanhiaView extends JFrame {
 
         // Se o id != 0 significa que é Alteração
         if (id !=0) {
-            Companhia companhia = new Companhia("Gol", "1144741");
+            Companhia companhia = new Companhia(1, "Gol", "1144741");
 
             textNome.setText(companhia.getNome());
             textCnpj.setText(companhia.getCnpj());
