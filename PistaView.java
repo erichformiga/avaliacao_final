@@ -2,10 +2,10 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 
-public class PistasView extends JFrame {
+public class PistaView extends JFrame {
     private Font fontForm = new FontUIResource("consolas", Font.PLAIN, 12);
     
-    public PistasView() {
+    public PistaView() {
         
     /*  ID_PISTA
 	    NUMERO_PISTA */
@@ -47,6 +47,6 @@ public class PistasView extends JFrame {
     }
 
     public static void main(String[] args){
-        PistasView formPistas = new PistasView();
+        PistaView formPistas = new PistaView();
     }
 }
