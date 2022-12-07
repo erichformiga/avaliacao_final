@@ -17,6 +17,8 @@ public class Companhia {
         this.nome = nome;
         this.cnpj = cnpj;
         
+
+        
     // Iniciando a integração com o banco de dados 
 
         //this.id = 1;

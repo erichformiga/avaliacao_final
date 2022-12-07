@@ -16,14 +16,14 @@ public class Conexao  {
 
         try {
             Connection connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/jacksondb",
+                "jdbc:mysql://localhost:3306/flysysdb",
                 "root",
                 ""
                 );
             System.out.println("AEEEE CONECTOUUUUUU");    
             return connection;
         } catch (SQLException e) {
-            System.out.println("NAO CONECTOU AO BANCO!!\nErro: " + e);
+            System.out.println("NAO CONECTOU AO BANCO DESGRAÇA!!\nErro: " + e);
         }
         return null;
     }
@@ -32,3 +32,6 @@ public class Conexao  {
         Conexao.getConexao();
     }*/
 }
+
+
+/*erich */

@@ -59,24 +59,42 @@ public class CompanhiaView extends JFrame {
         panel1.add(textData);
 
         //Adicionando os botões
-        JButton bntNovo = new JButton("  Novo  ");
-        bntNovo.setFont(fontForm);
         JButton bntListar = new JButton("Listar");
+        bntListar.addActionListener(new ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                new CompanhiaLista();
+            }
+        });
         bntListar.setFont(fontForm);
         JButton bntCancelar = new JButton("Cancelar");
         bntCancelar.setFont(fontForm);
         JButton bntGravar = new JButton("Gravar");
         bntGravar.setFont(fontForm);
+        bntGravar.addActionListener(new ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                try{
+                    CompanhiaConexao companhiaConexao = new CompanhiaConexao();
+                    Companhia companhia = new Companhia(
+                        Integer.parseInt(textId.getText()),
+                        textNome.getText(),
+                        textCnpj.getText()
+                    );
+                    companhiaConexao.salvarOuAtualizar(companhia);
+                    JOptionPane.showMessageDialog(null, "Companhia Cadastrado com Suscesso");
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Erro ao criar companhia. " + e.getMessage());
+                }
+            }
+        });
         JButton bntFechar = new JButton("Fechar");
         bntFechar.setFont(fontForm);
 
-        panel3.add(bntNovo);
         panel3.add(bntListar);
         panel3.add(bntCancelar);
         panel3.add(bntGravar);
         panel3.add(bntFechar);
 
-        String[] columnNames = {"ID",
+        /*String[] columnNames = {"ID",
                         "NOME",
                         "CNPJ"};
 
@@ -97,7 +115,7 @@ public class CompanhiaView extends JFrame {
         tableView.setPreferredScrollableViewportSize(new Dimension(400,100));
         JScrollPane scrollPane = new JScrollPane(tableView);
         panel2.add(scrollPane);
-        //tableView.setVisible(false);
+        tableView.setVisible(true); */ 
 
 
         // Inicializando o Form Compahia
